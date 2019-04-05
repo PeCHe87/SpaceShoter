@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "GameElements/Weapon", order = 1)]
+[CreateAssetMenu(fileName = "Weapon", menuName = "Game Elements/Weapon", order = 1)]
 [System.Serializable]
 public class ScriptableWeapon : ScriptableObject
 {
