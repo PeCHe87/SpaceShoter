@@ -8,4 +8,6 @@ public class ScriptableEnemy : ScriptableObject
     public float DeadDelay;
     public float DetectionRadius;
     public LayerMask DetectionMask;
+    public float SpeedRotation;
+    public float DelayToStartFiring;
 }

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableWeapon
   BulletSpeedMovement: 2
   Bullet: {fileID: 645192295859277338, guid: 55dacf8b23fbf4d37917547764ddab0c, type: 3}
-  FireRate: 1
+  FireRate: 3
   BulletLifetime: 4
   BulletDamage: 20

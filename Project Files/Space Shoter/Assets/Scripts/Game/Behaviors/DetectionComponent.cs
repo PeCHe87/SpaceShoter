@@ -12,6 +12,7 @@ public class DetectionComponent : MonoBehaviour
     private float _maxDistance = 0;
     private bool _canDetect = false;
     private Transform _target = null;
+    private bool _enable = false;
 
     public void Setup(LayerMask layer, float radius)
     {
@@ -19,10 +20,20 @@ public class DetectionComponent : MonoBehaviour
         _radius = radius;
 
         _canDetect = true;
+
+        _enable = true;
+    }
+
+    public void Disable()
+    {
+        _enable = false;
     }
 
     private void Update()
     {
+        if (!_enable)
+            return;
+
         if (!_canDetect)
             return;
 
