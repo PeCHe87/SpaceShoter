@@ -8,4 +8,5 @@ public class ScriptableWeapon : ScriptableObject
     public Bullet Bullet;
     public float FireRate;
     public float BulletLifetime;
+    public float BulletDamage;
 }

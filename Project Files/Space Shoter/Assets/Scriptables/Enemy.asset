@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   MaxHealth: 50
+  DeadDelay: 2

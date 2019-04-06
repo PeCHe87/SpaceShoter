@@ -5,4 +5,5 @@
 public class ScriptableEnemy : ScriptableObject
 {
     public float MaxHealth;
+    public float DeadDelay;
 }
