@@ -6,4 +6,6 @@ public class ScriptableEnemy : ScriptableObject
 {
     public float MaxHealth;
     public float DeadDelay;
+    public float DetectionRadius;
+    public LayerMask DetectionMask;
 }

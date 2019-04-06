@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   DeadDelay: 2
+  DetectionRadius: 5
+  DetectionMask:
+    serializedVersion: 2
+    m_Bits: 512
