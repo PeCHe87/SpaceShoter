@@ -2,6 +2,9 @@
 
 public class SelectionComponent : MonoBehaviour
 {
+    public static System.Action<Transform> OnSelected;
+    public static System.Action OnDeselected;
+
     [SerializeField] private Camera _camera = null;
     [SerializeField] private Canvas _uiIndicator = null;
 
@@ -57,11 +60,17 @@ public class SelectionComponent : MonoBehaviour
         // Show the indicator above this selected object
         _uiIndicator.transform.position = _currentSelection.Pivot;
         _uiIndicator.enabled = true;
+
+        if (OnSelected != null)
+            OnSelected(_currentSelection.transform);
     }
 
     private void HideIndicator()
     {
         _uiIndicator.enabled = false;
         _currentSelection = null;
+
+        if (OnDeselected != null)
+            OnDeselected();
     }
 }

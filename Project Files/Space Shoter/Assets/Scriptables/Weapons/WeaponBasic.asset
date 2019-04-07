@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: WeaponBasic
   m_EditorClassIdentifier: Assembly-CSharp::ScriptableWeapon
+  Type: 1
   BulletSpeedMovement: 2
   Bullet: {fileID: 645192295859277338, guid: 55dacf8b23fbf4d37917547764ddab0c, type: 3}
   FireRate: 3

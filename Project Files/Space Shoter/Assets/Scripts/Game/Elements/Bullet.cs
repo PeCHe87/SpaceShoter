@@ -2,10 +2,22 @@
 
 public class Bullet : MonoBehaviour
 {
-    private bool _wasFired = false;
-    private float _speed = 1;
-    private float _lifeTime = 5;
-    private float _damage = 0;
+    public enum BulletType { NONE, SIMPLE_BULLET, HOMING_MISSILE };
+
+    private BulletType _type = BulletType.NONE;
+    internal bool _wasFired = false;
+    internal float _speed = 1;
+    internal float _lifeTime = 5;
+    internal float _damage = 0;
+    internal Transform _target = null;
+
+    public BulletType Type
+    {
+        get
+        {
+            return _type;
+        }
+    }
 
     private void Update()
     {
@@ -17,12 +29,10 @@ public class Bullet : MonoBehaviour
         if (_lifeTime <= 0)
             Destroy(gameObject);
         else
-        {
             transform.localPosition += transform.forward * _speed;
-        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         Debug.Log("Explosion! Collides with: " + other.transform.parent.name + ", bullet: " + name);
 
@@ -36,11 +46,17 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Setup(float speedMovement, float lifetime, float damage)
+    public virtual void Setup(float speedMovement, float lifetime, float damage, BulletType bulletType)
     {
+        _type = bulletType;
         _speed = speedMovement;
         _lifeTime = lifetime;
         _damage = damage;
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
     }
 
     public void Fire()

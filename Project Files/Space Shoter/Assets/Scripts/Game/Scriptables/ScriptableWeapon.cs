@@ -4,6 +4,7 @@
 [System.Serializable]
 public class ScriptableWeapon : ScriptableObject
 {
+    public Bullet.BulletType Type;
     public float BulletSpeedMovement;
     public Bullet Bullet;
     public float FireRate;
