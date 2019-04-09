@@ -13,6 +13,18 @@ public class Player : CharacterEntity
         Health.SetMaxHealth(_playerData.MaxHealth);
 
         _weapon = GetComponent<Weapon>();
+
+        WeaponSelectionSystem.OnWeaponSelection += WeaponHasChanged;
+    }
+
+    private void OnDestroy()
+    {
+        WeaponSelectionSystem.OnWeaponSelection -= WeaponHasChanged;
+    }
+
+    private void WeaponHasChanged(ScriptableWeapon weaponData)
+    {
+        _weapon.SetWeaponData(weaponData);
     }
 
     private void Update()

@@ -32,6 +32,21 @@ public class Weapon : MonoBehaviour
         }
     }
 
+    private void DeselectTarget()
+    {
+        _targetSelected = null;
+    }
+
+    private void SelectTarget(Transform target)
+    {
+        Enemy enemy = target.GetComponent<Enemy>();
+
+        if (enemy != null)
+            _targetSelected = target;
+        else
+            _targetSelected = null;
+    }
+
     [ContextMenu("Fire")]
     public void Fire()
     {
@@ -62,18 +77,8 @@ public class Weapon : MonoBehaviour
         _canFire = false;
     }
 
-    private void DeselectTarget()
+    public void SetWeaponData(ScriptableWeapon weaponData)
     {
-        _targetSelected = null;
-    }
-
-    private void SelectTarget(Transform target)
-    {
-        Enemy enemy = target.GetComponent<Enemy>();
-
-        if (enemy != null)
-            _targetSelected = target;
-        else
-            _targetSelected = null;
+        _weaponData = weaponData;
     }
 }
