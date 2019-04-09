@@ -34,15 +34,18 @@ public class Bullet : MonoBehaviour
 
     protected void OnTriggerEnter(Collider other)
     {
-        if (other == null)
+        Transform objective = other.transform.parent ?? other.transform;
+
+        if (objective == null)
             return;
 
-        Debug.Log("Explosion! Collides with: " + other.transform.parent.name + ", bullet: " + name);
+        Debug.Log("Explosion! Collides with: " + objective.name + ", bullet: " + name);
 
         // TODO: show VFX of explosion
 
         // Checks if other object is damageable
-        HealthController healthComponent = other.transform.parent.GetComponent<HealthController>();
+        HealthController healthComponent = objective.GetComponent<HealthController>();
+
         if (healthComponent != null)
             healthComponent.TakeDamage(_damage);
 

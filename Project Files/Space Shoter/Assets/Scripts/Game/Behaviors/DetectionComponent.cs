@@ -41,7 +41,7 @@ public class DetectionComponent : MonoBehaviour
 
         if (hits.Length > 0)
         {
-            Transform hitTarget = hits[0].transform.parent;
+            Transform hitTarget = (hits[0].transform.parent == null) ? hits[0].transform : hits[0].transform.parent;
 
             if (!hitTarget.Equals(_target))
             {

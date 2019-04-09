@@ -15,7 +15,6 @@ public class CharacterHUD : MonoBehaviour
     private void UpdateHealth()
     {
         _playerHealth.fillAmount = _character.Health.CurrentHealth / _character.Health.MaxHealth;
-        Debug.Log(_character.Health.CurrentHealth);
     }
 
     private void OnDestroy()
