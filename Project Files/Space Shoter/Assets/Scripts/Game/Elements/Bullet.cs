@@ -34,6 +34,9 @@ public class Bullet : MonoBehaviour
 
     protected void OnTriggerEnter(Collider other)
     {
+        if (other == null)
+            return;
+
         Debug.Log("Explosion! Collides with: " + other.transform.parent.name + ", bullet: " + name);
 
         // TODO: show VFX of explosion
