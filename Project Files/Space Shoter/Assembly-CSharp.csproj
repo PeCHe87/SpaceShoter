@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Game\Behaviors\AimingComponent.cs" />
+    <Compile Include="Assets\Scripts\Game\Behaviors\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\DetectionComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\FiringComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\HealthController.cs" />
