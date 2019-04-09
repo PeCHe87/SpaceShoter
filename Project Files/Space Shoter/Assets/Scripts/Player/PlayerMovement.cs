@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _target = null;
     [SerializeField] private float _drawRayLength = 20;
 
+
     private Vector3 _destination = Vector3.zero;
     private float distance = 0;
     private Vector3 offset = Vector3.zero;

@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Game\Behaviors\DetectionComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\FiringComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\HealthController.cs" />
+    <Compile Include="Assets\Scripts\Game\Behaviors\PushBackComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\Selectable.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\SelectionComponent.cs" />
     <Compile Include="Assets\Scripts\Game\Behaviors\WeaponSelectionSystem.cs" />
