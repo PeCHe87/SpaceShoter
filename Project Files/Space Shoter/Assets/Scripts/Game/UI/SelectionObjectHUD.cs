@@ -57,7 +57,10 @@ public class SelectionObjectHUD : MonoBehaviour
 
     private void UpdateObjectSelectedHealth()
     {
-        _txtObjectSelectedHealth.text = _health.CurrentHealth + " / " + _health.MaxHealth;
+        if (_health.CurrentHealth > 0)
+            _txtObjectSelectedHealth.text = _health.CurrentHealth + " / " + _health.MaxHealth;
+        else
+            _txtObjectSelectedHealth.text = "DEAD";
     }
 
     private void OnDestroy()
