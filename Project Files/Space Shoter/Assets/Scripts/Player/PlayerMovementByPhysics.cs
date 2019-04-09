@@ -3,6 +3,7 @@
 public class PlayerMovementByPhysics : MonoBehaviour
 {
     [SerializeField] private float _speedRotation = 1;
+    [SerializeField] private float _smoothInput = 0.5f;
     [SerializeField] private float _speedMovement = 1;
     [SerializeField] private float _speedMovementReverse = 1;
     [SerializeField] private float _speedSmoothBreak = 1;
@@ -32,8 +33,6 @@ public class PlayerMovementByPhysics : MonoBehaviour
         float forward = Input.GetAxisRaw("Vertical");
         float lateral = Input.GetAxisRaw("Horizontal");
 
-        Vector3 input = new Vector3(lateral, 0, forward);
-
         RotationMovement(lateral);
 
         // Movement
@@ -46,7 +45,6 @@ public class PlayerMovementByPhysics : MonoBehaviour
         else if (Mathf.Abs(_velocity.x) > 0.1f || Mathf.Abs(_velocity.z) > 0.1f)
         {
             _velocity = Vector3.Lerp(_velocity, Vector3.zero, _speedSmoothBreak * Time.deltaTime);
-            Debug.Log("Smooth stop");
         }
 
         _rigidbody.velocity = _velocity;
@@ -57,7 +55,7 @@ public class PlayerMovementByPhysics : MonoBehaviour
     private void RotationMovement(float lateral)
     {
         // Rotation movement
-        Vector3 rot = new Vector3(0, lateral, 0);
+        Vector3 rot = new Vector3(0, lateral * _smoothInput, 0);
         rot = rot.normalized * _speedRotation * Time.deltaTime;
         _target.Rotate(rot, Space.World);
     }

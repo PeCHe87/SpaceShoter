@@ -4380,9 +4380,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedRotation: 100
+  _smoothInput: 0.5
   _speedMovement: 2000
   _speedMovementReverse: 1000
-  _speedSmoothBreak: 2
+  _speedSmoothBreak: 1
   _rigidbody: {fileID: 858054746}
   _target: {fileID: 858054740}
   _recoveryTimeAfterColliding: 0.75
@@ -8583,6 +8584,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1551466787}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1555104577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1813037668411246308, guid: 8c26171d2440a4e57af5c280468fc86e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6071330877146174588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1555104583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555104577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b501b768676145e480bcfa250d9202b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2109337180}
 --- !u!1 &1566683354
 GameObject:
   m_ObjectHideFlags: 0
@@ -9911,6 +9931,7 @@ GameObject:
   - component: {fileID: 1840124099}
   - component: {fileID: 1840124101}
   - component: {fileID: 1840124100}
+  - component: {fileID: 1840124103}
   m_Layer: 0
   m_Name: UIIndicator
   m_TagString: Untagged
@@ -9998,6 +10019,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1840124103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840124098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b501b768676145e480bcfa250d9202b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 2109337180}
 --- !u!1001 &1854822090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11098,10 +11132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 858054740}
   _forwardOffset: 100
-  _heightOffset: 120
-  _speed: 1
-  _rotationSpeed: 2
+  _heightOffset: 180
+  _speed: 0.5
+  _rotationSpeed: 0.8
   _canRotate: 1
+  _rotateRelatedWithTarget: 0
 --- !u!1001 &2134581019
 PrefabInstance:
   m_ObjectHideFlags: 0
