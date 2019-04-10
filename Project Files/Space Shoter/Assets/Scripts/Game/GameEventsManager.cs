@@ -3,6 +3,8 @@
 public class GameEventsManager : MonoBehaviour
 {
     public static System.Action OnPlayerDead;
+    public static System.Action<bool> OnBoostActivated;
+    public static System.Action<float> OnBoostAmountChanged;
 
     [SerializeField] private HealthController _playerHealth = null;
 

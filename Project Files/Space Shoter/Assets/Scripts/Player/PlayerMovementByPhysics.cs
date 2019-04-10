@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovementByPhysics : MonoBehaviour
 {
@@ -11,12 +10,14 @@ public class PlayerMovementByPhysics : MonoBehaviour
     [SerializeField] private Rigidbody _rigidbody = null;
     [SerializeField] private Transform _target = null;
     [SerializeField] private float _recoveryTimeAfterColliding = 0;
+    [SerializeField] private float _boostSpeedOffset = 0;
 
     private Quaternion _targetRotation = Quaternion.identity;
     private Vector3 _velocity = Vector3.zero;
     private PushBackComponent _collisionDetection = null;
     private float _currentRecoveryTimeAfterColliding = 0;
     private bool _enabled = true;
+    private bool _boostActive = false;
 
     private void Awake()
     {
@@ -24,6 +25,10 @@ public class PlayerMovementByPhysics : MonoBehaviour
 
         if (_collisionDetection != null)
             _collisionDetection.OnCollision += CollisionDetected;
+
+        SpeedBoostComponent speedBoost = GetComponent<SpeedBoostComponent>();
+        if (speedBoost != null)
+            GameEventsManager.OnBoostActivated += BoostActivated;
     }
 
     private void Update()
@@ -45,8 +50,13 @@ public class PlayerMovementByPhysics : MonoBehaviour
         if (Mathf.Abs(forward) > 0)
         {
             Vector3 _targetVelocity = _target.forward * forward * Time.deltaTime;
-            _targetVelocity *= (forward > 0) ? _speedMovement : _speedMovementReverse;
-            _velocity = Vector3.Lerp(_velocity, _targetVelocity, (forward > 0) ? _speedMovement : _speedMovementReverse * Time.deltaTime);
+
+            if (!_boostActive)
+                _targetVelocity *= (forward > 0) ? _speedMovement : _speedMovementReverse;
+            else
+                _targetVelocity *= (forward > 0) ? _speedMovement + _boostSpeedOffset : _speedMovementReverse + _boostSpeedOffset;
+
+            _velocity = Vector3.Lerp(_velocity, _targetVelocity, ((forward > 0) ? _speedMovement : _speedMovementReverse) * Time.deltaTime);
         }
         else if (Mathf.Abs(_velocity.x) > 0.1f || Mathf.Abs(_velocity.z) > 0.1f)
         {
@@ -94,13 +104,23 @@ public class PlayerMovementByPhysics : MonoBehaviour
 
     private void CollisionDetected()
     {
-        Debug.Log("Collision!");
+        // TODO: show damage by collision VFX
+
         _currentRecoveryTimeAfterColliding = _recoveryTimeAfterColliding;
+    }
+
+    private void BoostActivated(bool active)
+    {
+        _boostActive = active;
     }
 
     private void OnDestroy()
     {
         if (_collisionDetection != null)
             _collisionDetection.OnCollision -= CollisionDetected;
+
+        SpeedBoostComponent speedBoost = GetComponent<SpeedBoostComponent>();
+        if (speedBoost != null)
+            GameEventsManager.OnBoostActivated -= BoostActivated;
     }
 }

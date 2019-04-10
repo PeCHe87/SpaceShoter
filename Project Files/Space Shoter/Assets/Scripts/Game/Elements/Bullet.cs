@@ -39,8 +39,6 @@ public class Bullet : MonoBehaviour
         if (objective == null)
             return;
 
-        Debug.Log("Explosion! Collides with: " + objective.name + ", bullet: " + name);
-
         // TODO: show VFX of explosion
 
         // Checks if other object is damageable
