@@ -74,10 +74,12 @@
     <Compile Include="Assets\Scripts\Game\Elements\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\HomingMissile.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Game\GameEventsManager.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableEnemy.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptablePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableWeapon.cs" />
     <Compile Include="Assets\Scripts\Game\UI\CharacterHUD.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SelectionObjectHUD.cs" />
     <Compile Include="Assets\Scripts\Game\UI\WeaponsHUD.cs" />

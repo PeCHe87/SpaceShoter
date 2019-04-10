@@ -29,6 +29,8 @@ public class Enemy : CharacterEntity
         _firingComponent = GetComponent<FiringComponent>();
 
         _weapon = GetComponent<Weapon>();
+
+        GameEventsManager.OnPlayerDead += DeactivateComponents;
     }
 
     private void Start()
@@ -47,19 +49,13 @@ public class Enemy : CharacterEntity
     private void OnDestroy()
     {
         Health.OnDead -= Dead;
+
+        GameEventsManager.OnPlayerDead -= DeactivateComponents;
     }
 
     private void Dead()
     {
-        // Disable aiming
-        _aimingComponent.Disable();
-
-        // Disable detection
-        _detectionComponent.Disable();
-
-        // Disable firing 
-        if (_firingComponent != null)
-            _firingComponent.Disable();
+        DeactivateComponents();
 
         StartCoroutine(DestroyEntity());
     }
@@ -76,5 +72,18 @@ public class Enemy : CharacterEntity
 
         // TODO: back to pool when there were one, replace this destroy object line
         Destroy(gameObject);
+    }
+
+    private void DeactivateComponents()
+    {
+        // Disable aiming
+        _aimingComponent.Disable();
+
+        // Disable detection
+        _detectionComponent.Disable();
+
+        // Disable firing 
+        if (_firingComponent != null)
+            _firingComponent.Disable();
     }
 }

@@ -27,6 +27,14 @@ public class HealthController : MonoBehaviour
         }
     }
 
+    public bool IsDead
+    {
+        get
+        {
+            return _isDead;
+        }
+    }
+
     private void Start()
     {
         _currentHealth = _maxHealth;

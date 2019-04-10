@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovementByPhysics : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerMovementByPhysics : MonoBehaviour
     private Vector3 _velocity = Vector3.zero;
     private PushBackComponent _collisionDetection = null;
     private float _currentRecoveryTimeAfterColliding = 0;
+    private bool _enabled = true;
 
     private void Awake()
     {
@@ -24,11 +26,15 @@ public class PlayerMovementByPhysics : MonoBehaviour
             _collisionDetection.OnCollision += CollisionDetected;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
+        if (!_enabled)
+            return;
+
         if (Colliding())
             return;
 
+        // TODO: change this input detection to a separated InputController class
         // Input detection
         float forward = Input.GetAxisRaw("Vertical");
         float lateral = Input.GetAxisRaw("Horizontal");
@@ -48,8 +54,16 @@ public class PlayerMovementByPhysics : MonoBehaviour
         }
 
         _rigidbody.velocity = _velocity;
+    }
 
+    internal void Disabled()
+    {
+        _enabled = false;
+    }
 
+    internal void Enabled()
+    {
+        _enabled = true;
     }
 
     private void RotationMovement(float lateral)
