@@ -13,16 +13,23 @@ public class GameOverScreen : MonoBehaviour
 
         if (_playerHealth != null)
             _playerHealth.OnDead += PlayerDead;
+
+        GameEventsManager.OnFuelEmpty += PlayerDead;
     }
 
     private void OnDestroy()
     {
         if (_playerHealth != null)
             _playerHealth.OnDead -= PlayerDead;
+
+        GameEventsManager.OnFuelEmpty -= PlayerDead;
     }
 
     private void PlayerDead()
     {
+        if (_canvas == null)
+            return;
+
         _canvas.enabled = true;
     }
 

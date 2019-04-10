@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Player : CharacterEntity
 {
@@ -10,6 +11,8 @@ public class Player : CharacterEntity
 
     private void Awake()
     {
+        GameEventsManager.OnFuelEmpty += FuelEmpty;
+
         // Setups the health and subscribes to OnDead event
         Health = GetComponent<HealthController>();
         Health.SetMaxHealth(_playerData.MaxHealth);
@@ -32,8 +35,15 @@ public class Player : CharacterEntity
 
     private void OnDestroy()
     {
+        GameEventsManager.OnFuelEmpty -= FuelEmpty;
         WeaponSelectionSystem.OnWeaponSelection -= WeaponHasChanged;
         Health.OnDead -= Dead;
+    }
+
+    private void FuelEmpty()
+    {
+        Debug.Log("<color=red>Fuel empty</color>");
+        Dead();
     }
 
     private void WeaponHasChanged(ScriptableWeapon weaponData)

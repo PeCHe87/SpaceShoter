@@ -12,9 +12,10 @@ public class PlayerMovementByPhysics : MonoBehaviour
     [SerializeField] private float _recoveryTimeAfterColliding = 0;
     [SerializeField] private float _boostSpeedOffset = 0;
 
+    private PushBackComponent _collisionDetection = null;
+    private FuelConsumptionComponent _fuelComponent = null;
     private Quaternion _targetRotation = Quaternion.identity;
     private Vector3 _velocity = Vector3.zero;
-    private PushBackComponent _collisionDetection = null;
     private float _currentRecoveryTimeAfterColliding = 0;
     private bool _enabled = true;
     private bool _boostActive = false;
@@ -29,6 +30,8 @@ public class PlayerMovementByPhysics : MonoBehaviour
         SpeedBoostComponent speedBoost = GetComponent<SpeedBoostComponent>();
         if (speedBoost != null)
             GameEventsManager.OnBoostActivated += BoostActivated;
+
+        _fuelComponent = GetComponent<FuelConsumptionComponent>();
     }
 
     private void Update()
@@ -62,6 +65,10 @@ public class PlayerMovementByPhysics : MonoBehaviour
         {
             _velocity = Vector3.Lerp(_velocity, Vector3.zero, _speedSmoothBreak * Time.deltaTime);
         }
+
+        // Fuel consumption
+        if (_fuelComponent) // If user is pressing a movement key then consume fuel
+            _fuelComponent.Consuming = (Mathf.Abs(forward) > 0);
 
         _rigidbody.velocity = _velocity;
     }
