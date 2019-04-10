@@ -59,10 +59,14 @@ public class PlayerMovementByPhysics : MonoBehaviour
     internal void Disabled()
     {
         _enabled = false;
+
+        _rigidbody.isKinematic = true;  // Stops physics movement at all
     }
 
     internal void Enabled()
     {
+        _rigidbody.isKinematic = false;  // Enables physics movement
+
         _enabled = true;
     }
 

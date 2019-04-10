@@ -6,17 +6,27 @@ public class Player : CharacterEntity
 
     private Weapon _weapon = null;
     private PlayerMovementByPhysics _movementComponent = null;
+    private DamageByCollisionComponent _damageByCollisionComponent = null;
 
     private void Awake()
     {
+        // Setups the health and subscribes to OnDead event
         Health = GetComponent<HealthController>();
         Health.SetMaxHealth(_playerData.MaxHealth);
         Health.OnDead += Dead;
 
+        // Sets damage by collision if it has that component
+        _damageByCollisionComponent = GetComponent<DamageByCollisionComponent>();
+        if (_damageByCollisionComponent != null)
+            _damageByCollisionComponent.DamageByCollision = _playerData.DamageByCollision;
+
+        // Gets Weapon component
         _weapon = GetComponent<Weapon>();
 
+        // Gets MovementComponent
         _movementComponent = GetComponent<PlayerMovementByPhysics>();
 
+        // Subscribes to Weapon Selection system event of selection
         WeaponSelectionSystem.OnWeaponSelection += WeaponHasChanged;
     }
 

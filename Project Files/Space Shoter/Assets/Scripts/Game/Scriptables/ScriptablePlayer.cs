@@ -5,4 +5,5 @@
 public class ScriptablePlayer : ScriptableObject
 {
     public float MaxHealth;
+    public float DamageByCollision;
 }

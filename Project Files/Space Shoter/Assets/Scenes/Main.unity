@@ -4642,11 +4642,11 @@ GameObject:
   m_Component:
   - component: {fileID: 858054740}
   - component: {fileID: 858054745}
-  - component: {fileID: 858054741}
   - component: {fileID: 858054742}
   - component: {fileID: 858054743}
   - component: {fileID: 858054744}
   - component: {fileID: 858054750}
+  - component: {fileID: 858054741}
   - component: {fileID: 858054749}
   - component: {fileID: 858054748}
   - component: {fileID: 858054747}
@@ -4680,15 +4680,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858054739}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faebd488611464b1e840a4ef31c7d94d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4251db9d4ed604ee99fd870ab063ffaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speedMovement: 20
-  _speedRotation: 80
-  _target: {fileID: 858054740}
-  _drawRayLength: 20
 --- !u!114 &858054742
 MonoBehaviour:
   m_ObjectHideFlags: 0
