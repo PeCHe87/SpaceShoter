@@ -1,5 +1,4 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class CollectablesHUD : MonoBehaviour
@@ -8,6 +7,7 @@ public class CollectablesHUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _txtCollectables = null;
 
     private int _amountCollected = 0;
+    private int _collectablesAmount = 0;
 
     private void Awake()
     {
@@ -30,6 +30,13 @@ public class CollectablesHUD : MonoBehaviour
         _amountCollected++;
 
         UpdateLabel();
+
+        // TODO: move this logic to a Game Manager
+        if (_amountCollected == _collectables.Length)
+        {
+            if (GameEventsManager.OnAllCollectablesWereTaken != null)
+                GameEventsManager.OnAllCollectablesWereTaken();
+        }
     }
 
     private void UpdateLabel()

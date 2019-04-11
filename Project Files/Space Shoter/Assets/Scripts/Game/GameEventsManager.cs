@@ -10,6 +10,7 @@ public class GameEventsManager : MonoBehaviour
     public static System.Action OnFuelStartCharging;
     public static System.Action OnFuelStopCharging;
     public static System.Action OnCollectableTaken;
+    public static System.Action OnAllCollectablesWereTaken;
 
     [SerializeField] private HealthController _playerHealth = null;
 

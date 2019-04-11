@@ -13,6 +13,8 @@ public class Player : CharacterEntity
     {
         GameEventsManager.OnFuelEmpty += FuelEmpty;
 
+        GameEventsManager.OnAllCollectablesWereTaken += AllCollectablesTaken;
+
         // Setups the health and subscribes to OnDead event
         Health = GetComponent<HealthController>();
         Health.SetMaxHealth(_playerData.MaxHealth);
@@ -36,14 +38,21 @@ public class Player : CharacterEntity
     private void OnDestroy()
     {
         GameEventsManager.OnFuelEmpty -= FuelEmpty;
+        GameEventsManager.OnAllCollectablesWereTaken -= AllCollectablesTaken;
         WeaponSelectionSystem.OnWeaponSelection -= WeaponHasChanged;
         Health.OnDead -= Dead;
     }
 
     private void FuelEmpty()
     {
-        Debug.Log("<color=red>Fuel empty</color>");
         Dead();
+    }
+
+    private void AllCollectablesTaken()
+    {
+        // Deactivates every component related with player
+        if (_movementComponent != null)
+            _movementComponent.Disabled();
     }
 
     private void WeaponHasChanged(ScriptableWeapon weaponData)
