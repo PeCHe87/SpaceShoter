@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Game\Behaviors\WeaponSelectionSystem.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\Bullet.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\CharacterEntity.cs" />
+    <Compile Include="Assets\Scripts\Game\Elements\Collectable.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\Enemy.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\FuelChargeStation.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\HomingMissile.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptablePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableWeapon.cs" />
     <Compile Include="Assets\Scripts\Game\UI\CharacterHUD.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\CollectablesHUD.cs" />
     <Compile Include="Assets\Scripts\Game\UI\FuelHUD.cs" />
     <Compile Include="Assets\Scripts\Game\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LookAtCamera.cs" />

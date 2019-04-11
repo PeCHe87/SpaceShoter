@@ -9,6 +9,7 @@ public class GameEventsManager : MonoBehaviour
     public static System.Action OnFuelEmpty;
     public static System.Action OnFuelStartCharging;
     public static System.Action OnFuelStopCharging;
+    public static System.Action OnCollectableTaken;
 
     [SerializeField] private HealthController _playerHealth = null;
 
