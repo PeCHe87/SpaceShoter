@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptablePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableWeapon.cs" />
     <Compile Include="Assets\Scripts\Game\UI\CharacterHUD.cs" />
+    <Compile Include="Assets\Scripts\Game\UI\FuelHUD.cs" />
     <Compile Include="Assets\Scripts\Game\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\Game\UI\LookAtCamera.cs" />
     <Compile Include="Assets\Scripts\Game\UI\SelectionObjectHUD.cs" />

@@ -72,6 +72,9 @@ public class FuelConsumptionComponent : MonoBehaviour
     {
         _currentAmount -= _consumingTimeStep * Time.deltaTime;
 
+        if (GameEventsManager.OnFuelAmountChanged != null)
+            GameEventsManager.OnFuelAmountChanged(_currentAmount / _maxAmount);
+
         if (_currentAmount <= 0)
         {
             if (GameEventsManager.OnFuelEmpty != null)

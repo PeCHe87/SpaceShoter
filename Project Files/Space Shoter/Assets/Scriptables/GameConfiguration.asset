@@ -15,6 +15,6 @@ MonoBehaviour:
   BoostConsumeTimeStep: 12
   BoostMaxCharge: 200
   BoostReloadingTimeStep: 4
-  FuelConsumeTimeStep: 50
+  FuelConsumeTimeStep: 5
   FuelMaxCharge: 400
   FuelChargingTimeStep: 10
