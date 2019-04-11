@@ -4,6 +4,8 @@
 [System.Serializable]
 public class ScriptableGameConfiguration : ScriptableObject
 {
+    public LayerMask PlayerLayerMask;
+
     [Header("Boost properties")]
     public float BoostConsumeTimeStep;
     public float BoostMaxCharge;
@@ -12,5 +14,4 @@ public class ScriptableGameConfiguration : ScriptableObject
     [Header("Fuel properties")]
     public float FuelConsumeTimeStep;
     public float FuelMaxCharge;
-    public float FuelChargingTimeStep;
 }

@@ -75,11 +75,13 @@
     <Compile Include="Assets\Scripts\Game\Elements\Bullet.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\CharacterEntity.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Elements\FuelChargeStation.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\HomingMissile.cs" />
     <Compile Include="Assets\Scripts\Game\Elements\Weapon.cs" />
     <Compile Include="Assets\Scripts\Game\GameController.cs" />
     <Compile Include="Assets\Scripts\Game\GameEventsManager.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableEnemy.cs" />
+    <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableFuelChargeStation.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableGameConfiguration.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptablePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Scriptables\ScriptableWeapon.cs" />

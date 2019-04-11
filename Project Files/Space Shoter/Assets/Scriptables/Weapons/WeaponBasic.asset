@@ -15,6 +15,6 @@ MonoBehaviour:
   Type: 1
   BulletSpeedMovement: 2
   Bullet: {fileID: 645192295859277338, guid: 55dacf8b23fbf4d37917547764ddab0c, type: 3}
-  FireRate: 3
+  FireRate: 0
   BulletLifetime: 4
   BulletDamage: 20

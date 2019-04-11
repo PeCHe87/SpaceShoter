@@ -3,7 +3,6 @@
 public class FuelConsumptionComponent : MonoBehaviour
 {
     // Properties will be set from Configuration
-    private float _chargingTimeStep = 0;
     private float _consumingTimeStep = 0;
     private float _maxAmount = 0;
     private ScriptableGameConfiguration _configuration = null;
@@ -33,12 +32,11 @@ public class FuelConsumptionComponent : MonoBehaviour
     {
         _configuration = GameController.Configuration;
 
-        Setup(_configuration.FuelChargingTimeStep, _configuration.FuelConsumeTimeStep, _configuration.FuelMaxCharge);
+        Setup(_configuration.FuelConsumeTimeStep, _configuration.FuelMaxCharge);
     }
 
-    private void Setup(float chargingStep, float consumingStep, float maxAmount)
+    private void Setup(float consumingStep, float maxAmount)
     {
-        _chargingTimeStep = chargingStep;
         _consumingTimeStep = consumingStep;
         _maxAmount = maxAmount;
 
@@ -62,9 +60,7 @@ public class FuelConsumptionComponent : MonoBehaviour
         if (_currentAmount <= 0)
             return;
 
-        if (_isCharging)
-            Charge();
-        else if (_isConsuming)
+        if (_isConsuming)
             Consume();
     }
 
@@ -82,14 +78,17 @@ public class FuelConsumptionComponent : MonoBehaviour
         }
     }
 
-    private void Charge()
+    public bool Charge(float amount)
     {
         if (_currentAmount >= _maxAmount)
-            return;
+            return false;
 
-        _currentAmount = Mathf.Clamp(_currentAmount + _chargingTimeStep * Time.deltaTime, 0, _maxAmount);
+        //_currentAmount = Mathf.Clamp(_currentAmount + _chargingTimeStep * Time.deltaTime, 0, _maxAmount);
+        _currentAmount = Mathf.Clamp(_currentAmount + amount, 0, _maxAmount);
 
         if (GameEventsManager.OnFuelAmountChanged != null)
             GameEventsManager.OnFuelAmountChanged(_currentAmount / _maxAmount);
+
+        return (_currentAmount < _maxAmount);
     }
 }
