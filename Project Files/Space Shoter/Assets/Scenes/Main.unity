@@ -12732,11 +12732,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -24900,11 +24900,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -36159,6 +36159,7 @@ GameObject:
   - component: {fileID: 2109337179}
   - component: {fileID: 2109337178}
   - component: {fileID: 2109337181}
+  - component: {fileID: 2109337182}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -36249,6 +36250,21 @@ MonoBehaviour:
   _rotationSpeed: 0.8
   _canRotate: 1
   _rotateRelatedWithTarget: 0
+--- !u!114 &2109337182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109337177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73eacf340b694fbca5cc94d96914a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _duration: 2
+  _amount: 1.1
+  _decreasingTimeStep: 1
 --- !u!1001 &2114845107
 PrefabInstance:
   m_ObjectHideFlags: 0

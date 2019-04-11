@@ -4,6 +4,7 @@
 public class HealthController : MonoBehaviour
 {
     public System.Action OnHealthChange;
+    public System.Action OnTakesDamage;
     public System.Action OnDead;
 
     [SerializeField] private float _maxHealth = 1;
@@ -53,6 +54,9 @@ public class HealthController : MonoBehaviour
         // Notify with an event the current health has changed
         if (OnHealthChange != null)
             OnHealthChange();
+
+        if (OnTakesDamage != null)
+            OnTakesDamage();
 
         // Checks if it is dead
         if (_currentHealth <= 0)
