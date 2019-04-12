@@ -9,6 +9,7 @@ public class LookAtCamera : MonoBehaviour
         if (_camera == null)
             return;
 
-        transform.LookAt(_camera, _camera.up);
+        Quaternion lookAt = Quaternion.LookRotation(_camera.forward, _camera.up);
+        transform.rotation = lookAt;
     }
 }
