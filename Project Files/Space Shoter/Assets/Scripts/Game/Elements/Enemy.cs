@@ -71,7 +71,7 @@ public class Enemy : CharacterEntity
         yield return new WaitForSeconds(_data.DeadDelay);
 
         // TODO: back to pool when there were one, replace this destroy object line
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void DeactivateComponents()
