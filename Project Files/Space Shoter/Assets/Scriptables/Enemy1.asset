@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8365af4a0bc7419096770e7da95f9df, type: 3}
-  m_Name: GameConfiguration
+  m_Script: {fileID: 11500000, guid: d0104b0a1656d43f59fc42b353054c51, type: 3}
+  m_Name: Enemy1
   m_EditorClassIdentifier: 
-  PlayerLayerMask:
+  MaxHealth: 50
+  DeadDelay: 2
+  DetectionRadius: 50
+  DetectionMask:
     serializedVersion: 2
     m_Bits: 512
-  BoostConsumeTimeStep: 12
-  BoostMaxCharge: 200
-  BoostReloadingTimeStep: 3
-  FuelConsumeTimeStep: 10
-  FuelMaxCharge: 400
+  SpeedRotation: 10
+  DelayToStartFiring: 2

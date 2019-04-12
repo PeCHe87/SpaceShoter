@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8933b9c9fa5048de94cbaa921676b73, type: 3}
   m_Name: Fuel Charge Station 1
   m_EditorClassIdentifier: 
-  ChargingTimeStep: 20
+  ChargingTimeStep: 40
   MaxCharge: 1000

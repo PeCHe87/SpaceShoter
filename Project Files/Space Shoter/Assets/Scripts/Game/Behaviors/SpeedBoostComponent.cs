@@ -58,7 +58,7 @@ public class SpeedBoostComponent : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             _isActive = !_isActive;
 
