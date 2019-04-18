@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: b1c4dafad7d3a4bfba2af36d5bf000b9, type: 3}
   m_Name: WeaponEnemy1
-  m_EditorClassIdentifier: Assembly-CSharp::ScriptableWeapon
+  m_EditorClassIdentifier: 
   Type: 1
-  BulletSpeedMovement: 2
+  BulletSpeedMovement: 3
   Bullet: {fileID: 645192295859277338, guid: 55dacf8b23fbf4d37917547764ddab0c, type: 3}
-  FireRate: 0.3
-  BulletLifetime: 4
+  FireRate: 0.2
+  BulletLifetime: 2
   BulletDamage: 5

@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 3382572401895845899}
   - component: {fileID: 1058728087}
   m_Layer: 0
-  m_Name: Enemy_Turret
+  m_Name: Enemy_Turret_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b13c15de6861b465cb14aacf53baa553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponData: {fileID: 11400000, guid: 75e3ac2bebd4740fea676cfc4819f638, type: 2}
+  _weaponData: {fileID: 11400000, guid: c9e3d4d1c44374dd4a62e28e1ecf624c, type: 2}
   _aim: {fileID: 6071330876420610661}
 --- !u!114 &6927267469357789383
 MonoBehaviour:
